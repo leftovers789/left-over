@@ -49,7 +49,6 @@ public class ScrumProject {
         
         ScheduleDetailsFrame sched = new ScheduleDetailsFrame();
         sched.show();
-        //last test
         
     }    
 }
