@@ -473,6 +473,7 @@ public class BusRegistrationFrame extends javax.swing.JFrame {
     }
 
     private void clearFields() {
+        capacityField.setText("");
         busNumberField.setText("");
         plateNumberField.setText("");
         engineSerialNumberField.setText("");
@@ -504,6 +505,8 @@ public class BusRegistrationFrame extends javax.swing.JFrame {
     private void cancelButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelButtonActionPerformed
         clearFields();
         this.hide();
+        MainMenu mainMenu=new MainMenu();
+        mainMenu.show();
     }//GEN-LAST:event_cancelButtonActionPerformed
 
     private void mainMenuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mainMenuButtonActionPerformed
