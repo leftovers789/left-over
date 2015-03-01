@@ -109,24 +109,26 @@
                                   <Component id="tireSerialNumberField2" min="-2" pref="200" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <EmptySpace max="32767" attributes="0"/>
+                          <EmptySpace pref="20" max="32767" attributes="0"/>
                       </Group>
                       <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="tireSerialNumberLabel" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Group type="102" alignment="0" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="busNumberLabel" alignment="0" min="-2" max="-2" attributes="0"/>
                                       <Component id="plateNumberLabel" alignment="0" min="-2" max="-2" attributes="0"/>
                                       <Component id="numberOfTireLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="capacityLabel" alignment="0" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                       <Component id="numberOfTireComboBox" alignment="0" min="-2" pref="89" max="-2" attributes="0"/>
                                       <Component id="busNumberField" max="32767" attributes="0"/>
-                                      <Component id="plateNumberField" alignment="0" min="-2" pref="114" max="-2" attributes="0"/>
+                                      <Component id="plateNumberField" alignment="0" pref="114" max="32767" attributes="0"/>
+                                      <Component id="capacityField" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
-                              <Component id="tireSerialNumberLabel" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
@@ -161,19 +163,24 @@
                           <Component id="dateLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="plateNumberLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="plateNumberField" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="capacityLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="capacityField" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="numberOfTireLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="numberOfTireComboBox" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
                           <Component id="tireSerialNumberLabel" min="-2" pref="24" max="-2" attributes="0"/>
                       </Group>
                       <Component id="panel2" min="-2" max="-2" attributes="0"/>
@@ -362,6 +369,13 @@
         <Component class="javax.swing.JTextField" name="tireSerialNumberField9">
         </Component>
         <Component class="javax.swing.JTextField" name="tireSerialNumberField10">
+        </Component>
+        <Component class="javax.swing.JLabel" name="capacityLabel">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Capacity:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="capacityField">
         </Component>
       </SubComponents>
     </Container>

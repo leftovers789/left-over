@@ -70,6 +70,8 @@ public class BusRegistrationFrame extends javax.swing.JFrame {
         tireSerialNumberField8 = new javax.swing.JTextField();
         tireSerialNumberField9 = new javax.swing.JTextField();
         tireSerialNumberField10 = new javax.swing.JTextField();
+        capacityLabel = new javax.swing.JLabel();
+        capacityField = new javax.swing.JTextField();
         cancelButton = new javax.swing.JButton();
         mainMenuButton = new javax.swing.JButton();
         saveButton = new javax.swing.JButton();
@@ -162,6 +164,8 @@ public class BusRegistrationFrame extends javax.swing.JFrame {
 
         tireSerialNumberLabel.setText("Tire Serial Number:");
 
+        capacityLabel.setText("Capacity:");
+
         javax.swing.GroupLayout panelLayout = new javax.swing.GroupLayout(panel);
         panel.setLayout(panelLayout);
         panelLayout.setHorizontalGroup(
@@ -191,20 +195,22 @@ public class BusRegistrationFrame extends javax.swing.JFrame {
                                 .addComponent(tireSerialNumberField1, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(tireSerialNumberField2, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addContainerGap(20, Short.MAX_VALUE))
                     .addGroup(panelLayout.createSequentialGroup()
                         .addGroup(panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(tireSerialNumberLabel)
                             .addGroup(panelLayout.createSequentialGroup()
                                 .addGroup(panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(busNumberLabel)
                                     .addComponent(plateNumberLabel)
-                                    .addComponent(numberOfTireLabel))
+                                    .addComponent(numberOfTireLabel)
+                                    .addComponent(capacityLabel))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(numberOfTireComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(busNumberField)
-                                    .addComponent(plateNumberField, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addComponent(tireSerialNumberLabel))
+                                    .addComponent(plateNumberField, javax.swing.GroupLayout.DEFAULT_SIZE, 114, Short.MAX_VALUE)
+                                    .addComponent(capacityField))))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(panelLayout.createSequentialGroup()
@@ -228,17 +234,21 @@ public class BusRegistrationFrame extends javax.swing.JFrame {
                     .addGroup(panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(dateField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(dateLabel)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(0, 0, 0)
                 .addGroup(panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelLayout.createSequentialGroup()
                         .addGroup(panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(plateNumberLabel)
                             .addComponent(plateNumberField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGap(0, 0, 0)
+                        .addGroup(panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(capacityLabel)
+                            .addComponent(capacityField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(2, 2, 2)
                         .addGroup(panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(numberOfTireLabel)
                             .addComponent(numberOfTireComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(13, 13, 13)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(tireSerialNumberLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(panel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -381,6 +391,13 @@ public class BusRegistrationFrame extends javax.swing.JFrame {
 
     private void saveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveButtonActionPerformed
         String busNumber = busNumberField.getText().toString();
+        int capacity = 0;
+        try {
+            capacity = Integer.parseInt(capacityField.getText().toString());
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Invalid input on capacity field!", "Error!", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
         if (engineSerialNumberField.getText().isEmpty() || numberOfTire == 0) {
             JOptionPane.showMessageDialog(null, "Please fill engine serial number field or select number of tires to continue!", "Invalid!", JOptionPane.ERROR_MESSAGE);
             return;
@@ -437,7 +454,7 @@ public class BusRegistrationFrame extends javax.swing.JFrame {
                 }
             }
         }
-        
+
         bus.setAvailability(true);
         busCompany.addBus(bus);
         clearFields();
@@ -471,7 +488,7 @@ public class BusRegistrationFrame extends javax.swing.JFrame {
             type = BusType.ORDINARY;
         } else if (typeComboBox.getSelectedIndex() == 2) {
             type = BusType.AIR_CONDITIONED;
-        }else {
+        } else {
             type = null;
         }
     }//GEN-LAST:event_typeComboBoxActionPerformed
@@ -482,7 +499,7 @@ public class BusRegistrationFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_cancelButtonActionPerformed
 
     private void mainMenuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mainMenuButtonActionPerformed
-        MainMenu mainMenu=new MainMenu();
+        MainMenu mainMenu = new MainMenu();
         clearFields();
         this.hide();
         mainMenu.show();
@@ -527,6 +544,8 @@ public class BusRegistrationFrame extends javax.swing.JFrame {
     private javax.swing.JTextField busNumberField;
     private javax.swing.JLabel busNumberLabel;
     private javax.swing.JButton cancelButton;
+    private javax.swing.JTextField capacityField;
+    private javax.swing.JLabel capacityLabel;
     private javax.swing.JTextField dateField;
     private javax.swing.JLabel dateLabel;
     private javax.swing.JTextField engineSerialNumberField;
