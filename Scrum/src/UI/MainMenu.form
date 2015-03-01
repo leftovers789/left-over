@@ -46,18 +46,18 @@
                   <Component id="currentlyLoggedInLabel" max="32767" attributes="0"/>
                   <Group type="102" alignment="0" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jButton3" min="-2" pref="130" max="-2" attributes="0"/>
-                          <Component id="jButton1" min="-2" pref="130" max="-2" attributes="0"/>
-                          <Component id="jButton6" alignment="0" min="-2" pref="130" max="-2" attributes="0"/>
+                          <Component id="manageBookingButton" min="-2" pref="130" max="-2" attributes="0"/>
+                          <Component id="manageBusButton" min="-2" pref="130" max="-2" attributes="0"/>
+                          <Component id="logOutButton" alignment="0" min="-2" pref="130" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jButton7" min="-2" pref="130" max="-2" attributes="0"/>
-                          <Component id="jButton2" min="-2" pref="130" max="-2" attributes="0"/>
-                          <Component id="jButton4" min="-2" pref="130" max="-2" attributes="0"/>
+                          <Component id="exitButton" min="-2" pref="130" max="-2" attributes="0"/>
+                          <Component id="manageEmployeeButton" min="-2" pref="130" max="-2" attributes="0"/>
+                          <Component id="viewLogsButton" min="-2" pref="130" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <Component id="jButton5" alignment="0" max="32767" attributes="0"/>
+                  <Component id="financialReportButton" alignment="0" max="32767" attributes="0"/>
               </Group>
               <EmptySpace pref="20" max="32767" attributes="0"/>
           </Group>
@@ -70,20 +70,20 @@
               <Component id="currentlyLoggedInLabel" min="-2" pref="38" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jButton1" alignment="3" min="-2" pref="75" max="-2" attributes="0"/>
-                  <Component id="jButton2" alignment="3" min="-2" pref="75" max="-2" attributes="0"/>
+                  <Component id="manageBusButton" alignment="3" min="-2" pref="75" max="-2" attributes="0"/>
+                  <Component id="manageEmployeeButton" alignment="3" min="-2" pref="75" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jButton3" alignment="3" min="-2" pref="75" max="-2" attributes="0"/>
-                  <Component id="jButton4" alignment="3" min="-2" pref="75" max="-2" attributes="0"/>
+                  <Component id="manageBookingButton" alignment="3" min="-2" pref="75" max="-2" attributes="0"/>
+                  <Component id="viewLogsButton" alignment="3" min="-2" pref="75" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
-              <Component id="jButton5" min="-2" pref="75" max="-2" attributes="0"/>
+              <Component id="financialReportButton" min="-2" pref="75" max="-2" attributes="0"/>
               <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jButton6" alignment="3" min="-2" pref="75" max="-2" attributes="0"/>
-                  <Component id="jButton7" alignment="3" min="-2" pref="75" max="-2" attributes="0"/>
+                  <Component id="logOutButton" alignment="3" min="-2" pref="75" max="-2" attributes="0"/>
+                  <Component id="exitButton" alignment="3" min="-2" pref="75" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="32767" attributes="0"/>
           </Group>
@@ -91,46 +91,52 @@
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JButton" name="jButton1">
+    <Component class="javax.swing.JButton" name="manageBusButton">
       <Properties>
         <Property name="text" type="java.lang.String" value="Manage Bus"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="manageBusButtonActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton2">
+    <Component class="javax.swing.JButton" name="manageEmployeeButton">
       <Properties>
         <Property name="text" type="java.lang.String" value="Manage Employee"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton3">
+    <Component class="javax.swing.JButton" name="manageBookingButton">
       <Properties>
         <Property name="text" type="java.lang.String" value="Manage Booking"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton3ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="manageBookingButtonActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton4">
+    <Component class="javax.swing.JButton" name="viewLogsButton">
       <Properties>
         <Property name="text" type="java.lang.String" value="View Logs"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton5">
+    <Component class="javax.swing.JButton" name="financialReportButton">
       <Properties>
         <Property name="text" type="java.lang.String" value="Financial Report"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton6">
+    <Component class="javax.swing.JButton" name="logOutButton">
       <Properties>
         <Property name="text" type="java.lang.String" value="Log Out"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="logOutButtonActionPerformed"/>
+      </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton7">
+    <Component class="javax.swing.JButton" name="exitButton">
       <Properties>
         <Property name="text" type="java.lang.String" value="Exit"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="exitButtonActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="currentlyLoggedInLabel">
     </Component>

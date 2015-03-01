@@ -11,12 +11,12 @@ public class Bus {
     private String busNumber;
     private int capacity;
     private Driver driver;
-    private Condoctor conductor;
+    private Conductor conductor;
     private List<String> tireSerialNumbers = new ArrayList<>();
     private String engineSerialNumber;
     private Date dateAdded;
 
-    public Bus(String plateNumber, BusType busType, boolean availability, String busNumber, int capacity, Driver driver, Condoctor conductor, String engineSerialNumber, Date dateAdded) {
+    public Bus(String plateNumber, BusType busType, boolean availability, String busNumber, int capacity, Driver driver, Conductor conductor, String engineSerialNumber, Date dateAdded) {
         this.plateNumber = plateNumber;
         this.busType = busType;
         this.availability = availability;
@@ -64,11 +64,11 @@ public class Bus {
         this.driver = driver;
     }
 
-    public Condoctor getConductor() {
+    public Conductor getConductor() {
         return conductor;
     }
 
-    public void setConductor(Condoctor conductor) {
+    public void setConductor(Conductor conductor) {
         this.conductor = conductor;
     }
 

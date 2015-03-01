@@ -9,9 +9,10 @@ import java.util.List;
 public class RepairLog {
 
     private Mechanic mechanic;
-    private List<Bus> bussesChecked = new ArrayList<>();
+    private List<Bus> bussesMaintained = new ArrayList<>();
+    private List<Bus> bussesFixed=new ArrayList<>();
     private Date dateChecked;
-    private boolean issueFound;
+    private boolean minorIssue;
     private String descriptionOfIssue;
     private double issueEstimatedCost;
 
@@ -19,7 +20,7 @@ public class RepairLog {
             String descriptionOfIssue, double issueEstimatedCost) {
         this.mechanic = mechanic;
         this.dateChecked = dateChecked;
-        this.issueFound = issueFound;
+        this.minorIssue = issueFound;
         this.descriptionOfIssue = descriptionOfIssue;
         this.issueEstimatedCost = issueEstimatedCost;
     }
@@ -36,8 +37,8 @@ public class RepairLog {
         this.mechanic = mechanic;
     }
 
-    public List<Bus> getBusses() {
-        return bussesChecked;
+    public List<Bus> getBussesMaintained() {
+        return bussesMaintained;
     }
 
     /**
@@ -45,7 +46,7 @@ public class RepairLog {
      * @param bus
      */
     public void addBus(Bus busChecked) {
-        this.bussesChecked.add(busChecked);
+        this.bussesMaintained.add(busChecked);
     }
 
     public Date getDateChecked() {
@@ -60,8 +61,8 @@ public class RepairLog {
         this.dateChecked = dateChecked;
     }
 
-    public boolean getIssueFound() {
-        return this.issueFound;
+    public boolean hasMinorIssue() {
+        return this.minorIssue;
     }
 
     /**
@@ -69,7 +70,7 @@ public class RepairLog {
      * @param issueFound
      */
     public void setIssueFound(boolean issueFound) {
-        this.issueFound = issueFound;
+        this.minorIssue = issueFound;
     }
 
     public String getDescriptionOfIssue() {
