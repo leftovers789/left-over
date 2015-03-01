@@ -1,18 +1,28 @@
 package LogManagement;
 
-
 import BusManagement.Bus;
 import EmployeeManagement.Mechanic;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 public class RepairLog {
 
     private Mechanic mechanic;
-    private Bus busChecked;
+    private List<Bus> bussesChecked = new ArrayList<>();
     private Date dateChecked;
     private boolean issueFound;
     private String descriptionOfIssue;
-    private double issueCost;
+    private double issueEstimatedCost;
+
+    public RepairLog(Mechanic mechanic, Date dateChecked, boolean issueFound, 
+            String descriptionOfIssue, double issueEstimatedCost) {
+        this.mechanic = mechanic;
+        this.dateChecked = dateChecked;
+        this.issueFound = issueFound;
+        this.descriptionOfIssue = descriptionOfIssue;
+        this.issueEstimatedCost = issueEstimatedCost;
+    }
 
     public Mechanic getMechanic() {
         return this.mechanic;
@@ -26,16 +36,16 @@ public class RepairLog {
         this.mechanic = mechanic;
     }
 
-    public Bus getBus() {
-        return busChecked;
+    public List<Bus> getBusses() {
+        return bussesChecked;
     }
 
     /**
      *
      * @param bus
      */
-    public void setBus(Bus busChecked) {
-        this.busChecked = busChecked;
+    public void addBus(Bus busChecked) {
+        this.bussesChecked.add(busChecked);
     }
 
     public Date getDateChecked() {
@@ -74,16 +84,16 @@ public class RepairLog {
         this.descriptionOfIssue = descriptionOfIssue;
     }
 
-    public double getIssueCost() {
-        return this.issueCost;
+    public double getIssueEstimatedCost() {
+        return this.issueEstimatedCost;
     }
 
     /**
      *
      * @param issueCost
      */
-    public void setIssueCost(double issueCost) {
-        this.issueCost = issueCost;
+    public void setIssueEstimatedCost(double issueEstimatedCost) {
+        this.issueEstimatedCost = issueEstimatedCost;
     }
-	
+
 }

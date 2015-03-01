@@ -303,16 +303,16 @@ public class BusRegistrationFrame extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addComponent(panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(18, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
                         .addGap(6, 6, 6)
                         .addComponent(saveButton)
                         .addGap(18, 18, 18)
                         .addComponent(cancelButton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(mainMenuButton))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 12, Short.MAX_VALUE)))
-                .addContainerGap())
+                        .addComponent(mainMenuButton)
+                        .addGap(27, 27, 27))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -388,18 +388,26 @@ public class BusRegistrationFrame extends javax.swing.JFrame {
             }
         }
     }//GEN-LAST:event_numberOfTireComboBoxActionPerformed
-
+    
+    private void showEmptyFieldErrorDialog() {
+    JOptionPane.showMessageDialog(null, "Fill all the fields properly to continue.", "Error", JOptionPane.ERROR_MESSAGE);
+    }
+    
     private void saveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveButtonActionPerformed
         String busNumber = busNumberField.getText().toString();
         int capacity = 0;
         try {
             capacity = Integer.parseInt(capacityField.getText().toString());
+            if (capacity<=10) {
+                showEmptyFieldErrorDialog();
+                return;
+            }
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Invalid input on capacity field!", "Error!", JOptionPane.ERROR_MESSAGE);
+            showEmptyFieldErrorDialog();
             return;
         }
         if (engineSerialNumberField.getText().isEmpty() || numberOfTire == 0) {
-            JOptionPane.showMessageDialog(null, "Please fill engine serial number field or select number of tires to continue!", "Invalid!", JOptionPane.ERROR_MESSAGE);
+            showEmptyFieldErrorDialog();
             return;
         }
 
