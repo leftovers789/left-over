@@ -9,6 +9,7 @@ public class Passenger {
 	private int age;
 	private Gender gender;
         private String contactNumber;
+        private String address;
 	private Ticket ticket;
 
 	public String getFirstName() {
@@ -35,15 +36,46 @@ public class Passenger {
             return contactNumber;
         }
 
-        public Passenger(String firstName, String lastName, int age, Gender gender, String contactNumber, Ticket ticket) {
+        public String getAddress() {
+            return address;
+        }
+        
+        public Passenger(String firstName, String lastName, int age, Gender gender, String contactNumber, String address, Ticket ticket) {
             this.firstName = firstName;
             this.lastName = lastName;
             this.age = age;
             this.gender = gender;
             this.contactNumber = contactNumber;
+            this.address = address;
             this.ticket = ticket;
         }
 
-        
+        public void setFirstName(String firstName) {
+            this.firstName = firstName;
+        }
+
+        public void setLastName(String lastName) {
+            this.lastName = lastName;
+        }
+
+        public void setAge(int age) {
+            this.age = age;
+        }
+
+        public void setGender(Gender gender) {
+            this.gender = gender;
+        }
+
+        public void setContactNumber(String contactNumber) {
+            this.contactNumber = contactNumber;
+        }
+
+        public void setAddress(String address) {
+            this.address = address;
+        }
+
+        public void setTicket(Ticket ticket) {
+            this.ticket = ticket;
+        }
 
 }

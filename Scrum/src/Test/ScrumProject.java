@@ -36,7 +36,6 @@ public class ScrumProject {
         Bus bus = new Bus("1234", BusType.ORDINARY, true, "6969", 50, null, null, "Serial number", new Date());
         BusCompany company = BusCompany.getInstance();
         company.addBus(bus);
-        
         SearchEngine search = new SearchEngine();
         Registry reg = Registry.getInstance();
         Trip trip;

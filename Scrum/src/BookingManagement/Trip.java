@@ -27,10 +27,11 @@ public class Trip {
         this.schedule = schedule;
         this.referenceNo = referenceNo;
         this.venue = venue;
-    }
+    }   
 
     public void addPassenger(Passenger passenger){
         this.passenger.add(passenger);
+        capacity--;
     }
     
     public TripStatus getStatus() {
